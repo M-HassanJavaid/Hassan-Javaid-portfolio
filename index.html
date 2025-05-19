@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Hassan Javaid</title>
+    <!-- cdn of fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Google fonts links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap"
+        rel="stylesheet">
+    <!-- CSS link -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="cursor-partner default"></div>
+    <div id="loader"></div>
+    <nav>
+        <div id="logo">
+            <h1>Hassan Javaid</h1>
+        </div>
+        <ul id="nav-child">
+            <li data-key="focus"><a href="#" data-key="focus">Home</a></li>
+            <li data-key="focus"><a href="#skills" data-key="focus">My skills</a></li>
+            <li data-key="focus"><a href="#projects" data-key="focus">Projects</a></li>
+            <li data-key="focus"><a href="#service-heading" data-key="focus">What services i offer?</a></li>
+            <li data-key="focus"><a href="#contact-head" data-key="focus">Hire me</a></li>
+            <li id="themeChanger">
+                <i class="fa-solid fa-moon" data-key="remove"></i>
+                <i class="fa-solid fa-sun" data-key="remove"></i>
+            </li data-key="focus">
+            <li id="mobile-menu">
+                <i class="fa-solid fa-bars" data-key="remove"></i>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Hero section -->
+
+    <section id="hero">
+        <div id="intro">
+            <h1>Hi! Its me Hassan.</h1>
+            <p>I am a passionate Frontend Developer who specializes in crafting visually appealing and
+                fully responsive websites. I turn designs from Figma, Canva, and other tools into clean, pixel-perfect
+                code.
+            </p>
+            <p>I focus on creating smooth user experiences with animations, interactivity, and modern UI principles.
+                Whether
+                it’s a landing page, portfolio, or business site, I build with performance and elegance in mind.</p>
+            <div class="btn-container">
+                <button class="btn" data-key="focus"><a href="#contact-head" data-key="focus">Contact me</a></button>
+                <button class="btn" data-key="focus"><a href="#projects" data-key="focus">View my projects</a></button>
+            </div>
+        </div>
+        <div id="profile-img">
+            <img src="assets/My-image.jpeg" alt="This was my profile image." data-key="remove">
+        </div>
+
+    </section>
+
+    <!-- About me Section -->
+
+    <section id="skills">
+        <h1>Skills that i have</h1>
+        <div class="skills-container">
+            <div class="skill-card">
+                <img src="assets/HTML.png" alt="HTML Logo" data-key="remove">
+                <h2>HTML</h2>
+            </div>
+            <div class="skill-card">
+                <img src="assets/CSS.png" alt="CSS Logo" data-key="remove">
+                <h2>CSS</h2>
+            </div>
+            <div class="skill-card">
+                <img src="assets/JavaScript-logo.png" alt="Javascript Logo" data-key="remove">
+                <h2>Javascript</h2>
+            </div>
+            <div class="skill-card">
+                <img src="assets/GSAP-logo.webp" alt="GSAP Logo" data-key="remove">
+                <h2>GSAP</h2>
+            </div>
+            <div class="skill-card">
+                <img src="assets/EmailJS.png" alt="Email JS Logo" data-key="remove">
+                <h2>Email JS</h2>
+            </div>
+        </div>
+    </section>
+
+    <!-- projects section -->
+
+    <section id="projects">
+        <h1>My Projects</h1>
+        <div class="projects-child" id="project1">
+            <div class="project-description" id="project-descript-1">
+                <h3>A stunning beautiful Animated Website: Sidcup Family Golf</h3>
+                <p>This project features a beautifully animated website using HTML, CSS, and JavaScript. It includes an
+                    interactive cursor, smooth animations with GSAP and ScrollTrigger, and a fully responsive design
+                    with a mobile-friendly dropdown menu. A cool, engaging web experience!</p>
+                <div class="btn-container">
+                    <button class="btn btn-full-width" data-key="focus"><a href="https://github.com/M-HassanJavaid/Sidcup-family-golf-web" target="_blank" data-key="focus">Checkout code on
+                            Github</a></button>
+                    <button class="btn btn-full-width" data-key="focus"><a href="https://m-hassanjavaid.github.io/Sidcup-family-golf-web/" target="_blank" data-key="focus">View
+                            Live</a></button>
+                </div>
+            </div>
+            <div class="videoContainer">
+                <div class="videoLoaderContainer">
+                    <div class="videoLoader"></div>
+                </div>
+                <video src="assets/SidCup web video.mp4" data-key="remove" data-project="project1" muted></video>
+            </div>
+        </div>
+        <div class="projects-child" id="project2">
+            <div class="project-description" id="project-descript-2">
+                <h3>A Pixel-Perfect Clone of the Coinbase Website</h3>
+                <p>A pixel-perfect clone of Coinbase's UI built with HTML, CSS, and JavaScript. Fully responsive and
+                    visually identical to the original design. Explore, modify, and enhance the code!</p>
+                <div class="btn-container">
+                    <button class="btn btn-full-width" data-key="focus"><a href="https://github.com/M-HassanJavaid/Coinbase-Web-clone" data-key="focus" target="_blank">Checkout code on
+                            Github</a></button>
+                    <button class="btn btn-full-width" data-key="focus"><a href="https://m-hassanjavaid.github.io/Coinbase-Web-clone/" data-key="focus" target="_blank">View
+                            Live</a></button>
+                </div>
+            </div>
+            <div class="videoContainer">
+                <div class="videoLoaderContainer">
+                    <div class="videoLoader"></div>
+                </div>
+                <video src="assets/Coinbase-Clone.mp4" data-key="remove" data-project="project2" muted></video>
+            </div>
+        </div>
+        <div class="projects-child" id="project3">
+            <div class="project-description" id="project-descript-3">
+                <h3>Tic-Tac-Toe Game</h3>
+                <p>A simple Tic Tac Toe game built with HTML, CSS, and JavaScript. Play in multiplayer mode or against a
+                    computer bot, which is created using pure JavaScript logic without AI. The game has a clean,
+                    responsive design.
+                </p>
+                <div class="btn-container">
+                    <button class="btn btn-full-width" data-key="focus"><a href="https://github.com/M-HassanJavaid/Tic-Tac-Toe-Game" data-key="focus" target="_blank">Checkout code on
+                            Github</a></button>
+                    <button class="btn btn-full-width" data-key="focus"><a href="https://m-hassanjavaid.github.io/Tic-Tac-Toe-Game/" data-key="focus" target="_blank">View
+                            Live</a></button>
+                </div>
+            </div>
+            <div class="videoContainer">
+                <div class="videoLoaderContainer">
+                    <div class="videoLoader"></div>
+                </div>
+                <video src="assets/Tic-Tac-Toe.mp4" data-key="remove" data-project="project3" muted></video>
+            </div>
+        </div>
+        <p id="more-on-github"><a href="https://github.com/M-HassanJavaid?tab=repositories" target="_blank" data-key="focus">Checkout
+                more projects on
+                Github <i class="fa-brands fa-square-github"></i></a> </p>
+    </section>
+
+
+    <section id="Services">
+        <h1 id="service-heading">What services i offer?</h1>
+
+        <!-- First Service -->
+
+        <div id="services-container">
+            <div class="services-card" id="service-1">
+                <h3>Figma / Canva to HTML Conversion</h3>
+                <div class="service-description">
+                    <p class="service-p-1">Do you have a beautiful design in Figma or Canva and need it turned into a
+                        real website? I can
+                        help!</p>
+                    <p class="service-p-2">I will take your static design and convert it into a responsive,
+                        pixel-perfect website using
+                        clean HTML, CSS, and JavaScript — no backend needed. Whether it's a personal project, landing
+                        page, or a static business site, your design will come to life in the browser exactly as you
+                        envisioned.
+                    </p>
+                    <h5>✅ What you’ll get:</h5>
+                    <ul class="what-you-get">
+                        <li>100% match to your Figma/Canva design</li>
+                        <li>Responsive layout (mobile, tablet, desktop)</li>
+                        <li>Fast, clean, and SEO-friendly code</li>
+                        <li>Cross-browser compatibility</li>
+                        <li>Smooth animations and transitions (if required)</li>
+                        <li>Organized files ready to deploy</li>
+                    </ul>
+                    <p class="service-p-3">
+                        This is perfect for designers, agencies, or business owners who want a fast, reliable frontend
+                        developer to bring their designs to life.
+                    </p>
+                    <button class="btn" data-key="focus"><a href="#contact-head" data-key="focus">Hire me</a></button>
+                </div>
+            </div>
+
+            <!-- Second Service -->
+
+            <div class="services-card" id="service-2">
+                <h3>Portfolio & Personal Website Development</h3>
+                <div class="service-description">
+                    <p class="service-p-1">Want a professional online presence to showcase your work, skills, or
+                        personal brand? I’ll build a clean, modern, and responsive website tailored just for you.</p>
+                    <p class="service-p-2">Whether you're a freelancer, creative, developer, or student — I’ll create a
+                        beautiful personal or portfolio website that looks great on all devices and leaves a lasting
+                        impression.
+                    </p>
+                    <h5>✅ What you’ll get:</h5>
+                    <ul class="what-you-get">
+                        <li>Fully custom portfolio or personal website</li>
+                        <li>Mobile-friendly, responsive layout</li>
+                        <li>Smooth animations and clean user experience</li>
+                        <li>Contact form (by using EmailJS)</li>
+                        <li>Fast, SEO-friendly, and easy-to-navigate design</li>
+                        <li>Organized code and files, ready to go live</li>
+                    </ul>
+                    <p class="service-p-3">This is ideal for anyone looking to build a personal brand, share their
+                        projects, or stand out professionally online — without dealing with complicated platforms or
+                        code.
+                    </p>
+                    <button class="btn" data-key="focus"><a href="#contact-head" data-key="focus">Hire me</a></button>
+                </div>
+            </div>
+
+            <!-- Third Service -->
+
+            <div class="services-card" id="service-3">
+                <h3>Responsive Landing Page Development</h3>
+                <div class="service-description">
+                    <p class="service-p-1">Need a high-converting landing page for your product, service, or campaign?
+                        I’ll build a modern, responsive landing page that looks great and performs well across all
+                        devices.
+                    </p>
+                    <p class="service-p-2">Landing pages are all about making a strong first impression — I’ll create a
+                        clean and focused design that guides your visitors to take action, whether it’s signing up,
+                        contacting you, or making a purchase.
+                    </p>
+                    <h5>✅ What you’ll get:</h5>
+                    <ul class="what-you-get">
+                        <li>Custom landing page built from your design or idea</li>
+                        <li>Fully responsive (mobile, tablet, desktop)</li>
+                        <li>Smooth scrolling and engaging layout</li>
+                        <li>Call-to-action buttons and sections that convert</li>
+                        <li>Fast-loading and SEO-friendly code</li>
+                        <li>Clean, organized files ready for deployment</li>
+                    </ul>
+                    <p class="service-p-3">Perfect for startups, small businesses, campaigns, or personal projects
+                        looking to make a powerful impact with a single-page site.</p>
+                    <button class="btn" data-key="focus"><a href="#contact-head" data-key="focus">Hire me</a></button>
+                </div>
+            </div>
+
+            <!-- Fourth Service -->
+
+            <div class="services-card" id="service-4">
+                <h3>Static Website Development</h3>
+                <div class="service-description">
+                    <p class="service-p-1">Looking for a fast, secure, and lightweight website without the complexity of
+                        backend systems? I’ll build you a fully responsive static website that’s perfect for portfolios,
+                        small businesses, or informational pages.
+                    </p>
+                    <p class="service-p-2">Static websites are simple, quick to load, and easy to maintain — ideal if
+                        you need a professional web presence without ongoing updates or dynamic content.
+                    </p>
+                    <h5>✅ What you’ll get:</h5>
+                    <ul class="what-you-get">
+                        <li>Custom-designed static website (HTML, CSS, JS)</li>
+                        <li>Fully responsive for mobile, tablet, and desktop</li>
+                        <li>Fast loading and SEO-friendly structure</li>
+                        <li>Clean, well-organized, and maintainable code</li>
+                        <li>Cross-browser compatibility</li>
+                        <li>Ready-to-upload files for platforms like Netlify, Vercel, GitHub Pages, Hostinger etc</li>
+                    </ul>
+                    <p class="service-p-3">This is the best solution for individuals or businesses who want a reliable
+                        and performant website without dealing with complex systems or CMS platforms.</p>
+                    <button class="btn" data-key="focus"><a href="#contact-head" data-key="focus">Hire me</a></button>
+                </div>
+            </div>
+        </div>
+        <div id="custom-services">
+            <p>For further details or to discuss a custom project, please feel free to get in touch. I’d be happy to
+                assist you.</p>
+            <button class="btn" data-key="focus"><a href="#contact-head" data-key="focus">Contact me</a></button>
+        </div>
+    </section>
+
+    <!-- Contact section -->
+
+    <section id="Contact-me">
+        <h1 id="contact-head">Lets get in touch!</h1>
+        <form>
+            <input type="text" placeholder="Enter your name" data-key="remove" id="name">
+            <input type="email" placeholder="Enter your Email" data-key="remove" id="email">
+            <select data-key="remove" id="objective">
+                <option value="" selected data-key="remove">Why am i contacting?</option>
+                <option value="for Deatils" data-key="remove">Just for further details</option>
+                <option value="Figma or Canva to HTML" data-key="remove">looking for Figma / Canva to HTML conversion
+                    service</option>
+                <option value="Portfolio Website" data-key="remove">looking for Portfolio & Personal Website Development
+                    service</option>
+                <option value="Landing Page" data-key="remove">looking for Responsive Landing Page Development service
+                </option>
+                <option value="Static Website" data-key="remove">looking for Static Website Development service</option>
+                <option value="Custom project" data-key="remove">discussing about Custom project</option>
+            </select>
+            <textarea placeholder="Describe your requirements" data-key="remove" id="message"></textarea>
+            <button class="btn" data-key="focus">Contact with me</button>
+        </form>
+        <p class="email">You can also email me on <a href="mailto:javaidhassan464@gmail.com"
+                data-key="focus">javaidhassan464@gmail.com</a></p>
+
+        <!-- Success Popup -->
+        
+        <div id="popup">
+            <p>Thank you for reaching out. Your message has been received, and I will respond to you as soon as possible.</p>
+            <button class="btn" data-key="focus">OK</button>
+        </div>
+
+    </section>
+
+
+    <footer>
+        <p>Connect with me on <a href="https://www.linkedin.com/in/hassan--javaid/" target="_blank" data-key="focus">Linkedin <i class="fa-brands fa-linkedin"
+                    data-key="focus"></i></a>
+            <a href="https://github.com/M-HassanJavaid" data-key="focus" target="_blank">Github <i class="fa-brands fa-square-github" data-key="focus"></i></a>
+        </p>
+
+        <p>All copyrights &COPY; reserved by Muhammad Hassan Javaid</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js"
+        integrity="sha512-f6bQMg6nkSRw/xfHw5BCbISe/dJjXrVGfz9BSDwhZtiErHwk7ifbmBEtF9vFW8UNIQPhV2uEFVyI/UHob9r7Cw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollTrigger.min.js"
+        integrity="sha512-AcqPGqrrAEtEwe+ADO5R8RbdFi7tuU7b/A2cJJH0Im0D18NRk5p5s4B3E5PMuO81KFw0ClN7J5SHVUJz7KOb0A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init({
+                publicKey: "IlhJE7gHmbaRf3AVl",
+            });
+        })();
+    </script>
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
