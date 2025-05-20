@@ -196,9 +196,10 @@ gsap.from('#Contact-me > form', {
     scrollTrigger: {
         trigger: '#Contact-me',
         scroller: 'body',
-        start: 'top 30%',
-        end: 'top 17%',
+        start: 'top 70%',
+        end: 'top 62%',
         scrub: 4,
+        markers: true
     }
 })
 
