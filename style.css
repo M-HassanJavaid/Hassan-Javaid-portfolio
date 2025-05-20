@@ -41,14 +41,23 @@ section{
 
 /* Loader */
 
+#loader-container{
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--primary-color-2);
+    top: 0px;
+    left: 0px;
+    z-index: 990;
+} 
+
 #loader{
     height: 100px;
     width: 100px;
     background-color: transparent;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50% , -50%);
+    position: absolute;
+    top: calc(50% - 50px);
+    left: calc(50% - 50px);
     z-index: 999;
     border-radius: 50%;
     border-block: 10px solid white;
@@ -56,12 +65,11 @@ section{
     animation-duration: 2s;
     animation-timing-function: ease-in-out;  
     animation-iteration-count: infinite;  
-    display: none;
 }
 
 @keyframes loader {
-    from{rotate: 0deg;}
-    to{rotate: 360deg;}
+    from{transform: rotateZ(0deg);}
+    to{transform: rotateZ(360deg);}
 }
 
 /* button */
@@ -172,6 +180,7 @@ nav {
     left: 50%;
     transform: translateX(-50%);
     box-shadow: 0 4px 100px 10px var(--secondary-color);
+    transition: all 0.4s;
 }
 
 #nav-child {
@@ -189,6 +198,7 @@ nav {
 
 #logo{
     margin-right: 100px;
+    margin-left: 10px;
 }
 
 #nav-child li {
@@ -250,6 +260,9 @@ nav {
     box-shadow: 0px 0px 100px yellow;
 }
 
+#profile-img{
+    padding: 20px;
+}
 
 @keyframes image-rotation {
     from {
@@ -496,6 +509,7 @@ nav {
     width: 100vw;
     position: absolute;
     left: 0px;
+    overflow: hidden;
 }
 
 /* Contact me */
@@ -597,25 +611,33 @@ textarea {
 
 footer {
     background-color: rgb(102, 150, 29);
-    color: var(--secondary-color);
+    color: var(--primary-color);
     font-size: var(--standard-fontsize);
     display: flex;
     justify-content: space-between;
-    padding: 15px;
+    padding: 15px 30px;
     align-items: center;
     width: 100vw;
-    text-wrap: nowrap;
     flex-wrap: wrap;
     gap: 10px;
-    padding: 10px;
 }
 
 
 footer a {
     text-decoration: none;
-    color: var(--secondary-color);
+    color: var(--primary-color);
     margin-inline: 15px;
-    color: var(--secondary-color);
+    margin-inline: 0px;
+}
+
+footer > ul > li:first-child{
+    font-style: italic;
+    font-weight: 900;
+}
+
+footer > ul > li{
+    list-style: none;
+    margin-block: 7px;
 }
 
 /* animations and cursor */
@@ -724,6 +746,7 @@ footer a {
 
     #logo > h1{
         margin: 10px;
+        margin-left: 0px ;
     }
 
     #nav-child > li > a:hover{
@@ -746,11 +769,17 @@ footer a {
 
 @media (max-width : 500px) {
     
-    footer{
+    /* footer{
         text-wrap: wrap;
-    }
+    } */
 
     #Contact-me{
         padding-top: 185px;
+    }
+}
+
+@media (pointer: coarse){
+    .cursor-partner {
+        display: none;
     }
 }

@@ -15,25 +15,42 @@ document.addEventListener('mousemove', (e) => {
     }
 });
 
+
+// Code for theme changing
+
 let lightToDark = document.querySelector('.fa-moon');
 let darkToLight = document.querySelector('.fa-sun');
 
-darkToLight.addEventListener('click', () => {
+let saveTheme = localStorage.getItem('theme');
+if (saveTheme === 'light') {
+    ConvertDarkToLight()
+} 
+
+darkToLight.addEventListener('click', ConvertDarkToLight );
+
+lightToDark.addEventListener('click', ConvertLightToDark );
+
+
+function ConvertDarkToLight() {
     darkToLight.style.display = 'none';
     lightToDark.style.display = 'block';
     document.documentElement.style.setProperty('--primary-color', 'white');
     document.documentElement.style.setProperty('--secondary-color', 'black');
     document.documentElement.style.setProperty('--primary-color-2', '#dde3e9');
+    localStorage.setItem('theme' , 'light');
+}
 
-});
-
-lightToDark.addEventListener('click', () => {
+function ConvertLightToDark() {
     lightToDark.style.display = 'none';
     darkToLight.style.display = 'block';
     document.documentElement.style.setProperty('--primary-color', '#011627');
     document.documentElement.style.setProperty('--secondary-color', 'white');
     document.documentElement.style.setProperty('--primary-color-2', 'black');
-});
+    localStorage.setItem('theme' , 'dark');
+}
+
+
+// code to play video on on mouseenter project
 
 const findVideo = (element) => document.querySelector(`video[data-project = ${element.id}]`);
 
@@ -50,8 +67,7 @@ projects.forEach((element) => {
 
 // GSAP Animations
 
-
-gsap.registerPlugin(ScrollTrigger);
+// blur effect on skills logo
 
 gsap.from('.skill-card > img', {
     filter: 'blur(40px)',
@@ -63,6 +79,8 @@ gsap.from('.skill-card > img', {
         scrub: true
     }
 });
+
+// animations on projects section
 
 gsap.from('#project1 > .videoContainer > video', {
     x: '200px',
@@ -141,6 +159,8 @@ gsap.from('#project-descript-3', {
     }
 });
 
+// services animation
+
 gsap.from('#services-container', {
     y: 2000,
     opacity: -10,
@@ -152,6 +172,8 @@ gsap.from('#services-container', {
         scrub: 2
     }
 });
+
+// custom service animation
 
 gsap.from('#custom-services', {
     width: '0vw',
@@ -165,6 +187,8 @@ gsap.from('#custom-services', {
     }
 })
 
+// contact me form animation
+
 gsap.from('#Contact-me > form', {
     y: 700,
     scale: 0.4,
@@ -172,9 +196,9 @@ gsap.from('#Contact-me > form', {
     scrollTrigger: {
         trigger: '#Contact-me',
         scroller: 'body',
-        start: 'top 20%',
+        start: 'top 30%',
         end: 'top 17%',
-        scrub: 4
+        scrub: 4,
     }
 })
 
@@ -217,10 +241,12 @@ function sendMail() {
     let data = collectdata();
     if (data === null) { return }
     loader.style.display = 'block';
+    loader.style.backgroundColor = 'transparent';
 
     emailjs.send(serviceID, templateID, data)
         .then((resolve) => {
             loader.style.display = 'none';
+            loader.style.backgroundColor = 'black';
             popupMessage.innerHTML = 'Thank you for reaching out. Your message has been received, and I will respond to you as soon as possible.';
             emailConfirmPopup.style.display = 'flex';
         })
@@ -238,4 +264,40 @@ formSubmitBtn.addEventListener('click', (e) => {
     e.preventDefault();
     sendMail();
 });
+
+
+// Website preloader code
+
+let loaderContainer = document.querySelector('#loader-container');
+
+window.addEventListener('load' , ()=>{
+    loaderContainer.style.display = 'none';
+});
+
+// giving controls to videos on mobile devices
+
+const isTouchDevice = window.matchMedia('(pointer: coarse)').matches;
+let videos = document.querySelectorAll('video');
+
+if (isTouchDevice) {
+    videos.forEach((video)=>{
+        video.setAttribute('controls', 'true');
+    })
+}
+
+//mobile menue code
+
+let mobileMenu = document.querySelector('.fa-bars');
+let navbar = document.querySelector('nav');
+let isMenuOpen = false;
+
+mobileMenu.addEventListener('click' , ()=>{
+    if (isMenuOpen === false) {
+        navbar.style.height = '324px';
+        isMenuOpen = true;
+    } else {
+        navbar.style.height = '80px';
+        isMenuOpen = false;
+    }
+})
 
