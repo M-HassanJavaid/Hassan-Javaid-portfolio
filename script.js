@@ -291,6 +291,8 @@ let videos = document.querySelectorAll('video');
 if (isTouchDevice) {
     videos.forEach((video)=>{
         video.setAttribute('controls', 'true');
+        video.setAttribute('autoplay', 'true');
+        video.setAttribute('loop' , 'true');
     })
 }
 
