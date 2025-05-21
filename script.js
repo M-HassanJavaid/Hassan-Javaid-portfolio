@@ -198,8 +198,7 @@ gsap.from('#Contact-me > form', {
         scroller: 'body',
         start: 'top 70%',
         end: 'top 62%',
-        scrub: 4,
-        markers: true
+        scrub: 4
     }
 })
 
@@ -209,13 +208,27 @@ let emailConfirmPopup = document.querySelector('#popup');
 let PopupBtn = document.querySelector('#popup button');
 let popupMessage = document.querySelector('#popup p');
 let formSubmitBtn = document.querySelector('form .btn');
+let loaderContainer = document.querySelector('#loader-container');
 let loader = document.querySelector('#loader');
+
+function dispalyLoaderForForm() {
+    loaderContainer.style.backgroundColor = 'transparent';
+    loader.style.borderBlock = '10px solid var(--secondary-color)';
+    loaderContainer.style.display = 'block';
+}
+
+function hideLoaderForForm() {
+    loaderContainer.style.display = 'none';
+    loaderContainer.style.backgroundColor = 'black';
+    loader.style.borderBlock = '10px solid white';
+}
+
 
 PopupBtn.addEventListener('click', () => {
     emailConfirmPopup.style.display = 'none';
 })
 
-const serviceID = 'service_sho71bl';
+const serviceID = '';
 const templateID = 'template_hp8mogl';
 
 function collectdata() {
@@ -241,18 +254,15 @@ function collectdata() {
 function sendMail() {
     let data = collectdata();
     if (data === null) { return }
-    loader.style.display = 'block';
-    loader.style.backgroundColor = 'transparent';
-
+    dispalyLoaderForForm();
     emailjs.send(serviceID, templateID, data)
         .then((resolve) => {
-            loader.style.display = 'none';
-            loader.style.backgroundColor = 'black';
+            hideLoaderForForm();
             popupMessage.innerHTML = 'Thank you for reaching out. Your message has been received, and I will respond to you as soon as possible.';
             emailConfirmPopup.style.display = 'flex';
         })
         .catch((reject) => {
-            loader.style.display = 'none';
+            hideLoaderForForm();
             popupMessage.innerHTML = `We're sorry, but your message couldn't be sent right now. Please try again in a few moments, 
         or feel free to reach out directly at <a href='mailto:javaidhassan464@gmail.com' data-key='focus'>javaidhassan464@gmail.com</a>.
         Thanks for your patience!`;
@@ -268,8 +278,6 @@ formSubmitBtn.addEventListener('click', (e) => {
 
 
 // Website preloader code
-
-let loaderContainer = document.querySelector('#loader-container');
 
 window.addEventListener('load' , ()=>{
     loaderContainer.style.display = 'none';

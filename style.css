@@ -45,10 +45,11 @@ body > *{
     position: fixed;
     height: 100vh;
     width: 100vw;
-    background-color: var(--primary-color-2);
+    background-color: black;
     top: 0px;
     left: 0px;
     z-index: 990;
+    max-width: 100vw;
 } 
 
 #loader{
@@ -64,7 +65,7 @@ body > *{
     animation-name: loader;
     animation-duration: 2s;
     animation-timing-function: ease-in-out;  
-    animation-iteration-count: infinite;  
+    animation-iteration-count: infinite; 
 }
 
 @keyframes loader {
@@ -253,6 +254,7 @@ nav {
     perspective: 800px;
     animation: image-rotation 1.5s ease-in;
     width: 100%;
+    user-select: none;
 }
 
 #profile-img img:hover {
@@ -570,7 +572,6 @@ textarea {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    margin: 17px;
     padding: 17px;
     display: none;
     flex-direction: column;
@@ -756,6 +757,14 @@ footer > ul > li{
     #profile-img>img{
         margin-top: 100px;
     }
+}
+
+@media (max-width: 450px) {
+
+    #popup{
+        width: calc(100% - 30px);
+    }
+
 }
 
 @media (pointer: coarse){
