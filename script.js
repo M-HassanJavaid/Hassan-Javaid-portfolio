@@ -231,13 +231,26 @@ PopupBtn.addEventListener('click', () => {
 const serviceID = 'service_sho71bl';
 const templateID = 'template_hp8mogl';
 
+let nameInput = document.querySelector('#name');
+let emailInput = document.querySelector('#email');
+let objectiveInput = document.querySelector('#objective');
+let messageInput = document.querySelector('#message');
+
+function cleanInput() {
+    nameInput.value = '';
+    emailInput.value = '';
+    objectiveInput.value = '';
+    messageInput.value = '';
+}
+
+
 function collectdata() {
 
     let data = {
-        name: document.querySelector('#name').value,
-        email: document.querySelector('#email').value,
-        objective: document.querySelector('#objective').value,
-        message: document.querySelector('#message').value
+        name: nameInput.value,
+        email: emailInput.value,
+        objective: objectiveInput.value,
+        message: messageInput.value
     }
 
     for (const key in data) {
@@ -260,6 +273,7 @@ function sendMail() {
             hideLoaderForForm();
             popupMessage.innerHTML = 'Thank you for reaching out. Your message has been received, and I will respond to you as soon as possible.';
             emailConfirmPopup.style.display = 'flex';
+            cleanInput()
         })
         .catch((reject) => {
             hideLoaderForForm();
