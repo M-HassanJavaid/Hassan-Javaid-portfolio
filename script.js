@@ -1,4 +1,43 @@
-// gsap.registerPlugin(ScrollTrigger);
+import { getProjects } from "./firebase.js";
+
+// render projects
+
+(async function () {
+    try {
+        let projects = await getProjects();
+        let projectsCardContainer = document.querySelector('#project-card-container');
+
+        if (!projects) {
+            alert("Some error occured! projects could not load");
+            return;
+        }
+        projects.forEach((project) => {
+            let newCard = document.createElement('div');
+            newCard.classList.add('project-card');
+
+            newCard.innerHTML = `
+                <div class="project-image">
+                    <img src="${project.img}" alt="">
+                </div>
+                <div class="project-content">
+                    <h2 class="project-title">${project.title}</h2>
+                    <p>${project.description}</p>
+                    <div class="project-btn-container">
+                        <button class="btn project-btn" data-key="focus"><a href="${project.githubCode}" data-key="focus" target="_blank">Checkout Code</a></button>
+                        <button class="btn project-btn" data-key="focus"><a href="${project.liveWeb}" data-key="focus" target="_blank">See live Website</a></button>
+                    </div>
+                </div>`
+
+            projectsCardContainer.appendChild(newCard);
+
+        })
+
+    } catch (error) {
+        alert('Some error occured! projects could not load');
+    } finally {
+        document.querySelector('#projectloader').style.display = 'none';
+    }
+})()
 
 // cursor follow my div
 
@@ -24,11 +63,11 @@ let darkToLight = document.querySelector('.fa-sun');
 let saveTheme = localStorage.getItem('theme');
 if (saveTheme === 'light') {
     ConvertDarkToLight()
-} 
+}
 
-darkToLight.addEventListener('click', ConvertDarkToLight );
+darkToLight.addEventListener('click', ConvertDarkToLight);
 
-lightToDark.addEventListener('click', ConvertLightToDark );
+lightToDark.addEventListener('click', ConvertLightToDark);
 
 
 function ConvertDarkToLight() {
@@ -37,8 +76,10 @@ function ConvertDarkToLight() {
     document.documentElement.style.setProperty('--primary-color', 'white');
     document.documentElement.style.setProperty('--secondary-color', 'black');
     document.documentElement.style.setProperty('--primary-color-2', '#dde3e9');
-    localStorage.setItem('theme' , 'light');
+    document.documentElement.style.setProperty('--glassmorphism-color', 'rgba(221, 160, 221, 0.7)');
+    localStorage.setItem('theme', 'light');
 }
+
 
 function ConvertLightToDark() {
     lightToDark.style.display = 'none';
@@ -46,24 +87,13 @@ function ConvertLightToDark() {
     document.documentElement.style.setProperty('--primary-color', '#011627');
     document.documentElement.style.setProperty('--secondary-color', 'white');
     document.documentElement.style.setProperty('--primary-color-2', 'black');
-    localStorage.setItem('theme' , 'dark');
+    document.documentElement.style.setProperty('--glassmorphism-color', 'rgba(0, 0, 0, 0.7)');
+    localStorage.setItem('theme', 'dark');
 }
 
 
 // code to play video on on mouseenter project
 
-const findVideo = (element) => document.querySelector(`video[data-project = ${element.id}]`);
-
-let projects = document.querySelectorAll('.projects-child');
-
-projects.forEach((element) => {
-    element.addEventListener('mouseenter', function () {
-        findVideo(this).play();
-    });
-    element.addEventListener('mouseleave', function () {
-        findVideo(this).pause();
-    });
-});
 
 // GSAP Animations
 
@@ -82,82 +112,6 @@ gsap.from('.skill-card > img', {
 
 // animations on projects section
 
-gsap.from('#project1 > .videoContainer > video', {
-    x: '200px',
-    y: '200px',
-    scale: 0.2,
-    scrollTrigger: {
-        trigger: '#project1',
-        scroller: 'body',
-        start: 'top 30%',
-        end: 'top 20%',
-        scrub: 2,
-    }
-});
-
-gsap.from('#project2 > .videoContainer > video', {
-    x: '200px',
-    y: '200px',
-    scale: 0.2,
-    scrollTrigger: {
-        trigger: '#project2',
-        scroller: 'body',
-        start: 'top 30%',
-        end: 'top 20%',
-        scrub: 2,
-    }
-});
-
-gsap.from('#project3 > .videoContainer > video', {
-    x: '200px',
-    y: '200px',
-    scale: 0.2,
-    scrollTrigger: {
-        trigger: '#project3',
-        scroller: 'body',
-        start: 'top 30%',
-        end: 'top 20%',
-        scrub: 2,
-    }
-});
-
-// project description animation
-
-gsap.from('#project-descript-1', {
-    x: '-100%',
-    filter: 'blur(10px)',
-    scrollTrigger: {
-        trigger: '#project1',
-        scroller: 'body',
-        start: 'top 30%',
-        end: 'top 20%',
-        scrub: true
-    }
-});
-
-gsap.from('#project-descript-2', {
-    x: '-100%',
-    filter: 'blur(10px)',
-    scrollTrigger: {
-        trigger: '#project2',
-        scroller: 'body',
-        start: 'top 30%',
-        end: 'top 20%',
-        scrub: true
-    }
-});
-
-gsap.from('#project-descript-3', {
-    x: '-100%',
-    filter: 'blur(10px)',
-    scrollTrigger: {
-        trigger: '#project3',
-        scroller: 'body',
-        start: 'top 30%',
-        end: 'top 20%',
-        scrub: true
-    }
-});
 
 // services animation
 
@@ -293,7 +247,7 @@ formSubmitBtn.addEventListener('click', (e) => {
 
 // Website preloader code
 
-window.addEventListener('load' , ()=>{
+window.addEventListener('load', () => {
     loaderContainer.style.display = 'none';
 });
 
@@ -303,10 +257,10 @@ const isTouchDevice = window.matchMedia('(pointer: coarse)').matches;
 let videos = document.querySelectorAll('video');
 
 if (isTouchDevice) {
-    videos.forEach((video)=>{
+    videos.forEach((video) => {
         video.setAttribute('controls', 'true');
         video.setAttribute('autoplay', 'true');
-        video.setAttribute('loop' , 'true');
+        video.setAttribute('loop', 'true');
     })
 }
 
@@ -316,7 +270,7 @@ let mobileMenu = document.querySelector('.fa-bars');
 let navbar = document.querySelector('nav');
 let isMenuOpen = false;
 
-mobileMenu.addEventListener('click' , ()=>{
+mobileMenu.addEventListener('click', () => {
     if (isMenuOpen === false) {
         navbar.style.height = '324px';
         isMenuOpen = true;

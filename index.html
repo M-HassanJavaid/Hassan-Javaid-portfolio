@@ -105,75 +105,13 @@
     <!-- projects section -->
 
     <section id="projects">
-        <h1>My Projects</h1>
-        <div class="projects-child" id="project1">
-            <div class="project-description" id="project-descript-1">
-                <h3>A stunning beautiful Animated Website: Sidcup Family Golf</h3>
-                <p>This project features a beautifully animated website using HTML, CSS, and JavaScript. It includes an
-                    interactive cursor, smooth animations with GSAP and ScrollTrigger, and a fully responsive design
-                    with a mobile-friendly dropdown menu. A cool, engaging web experience!</p>
-                <div class="btn-container">
-                    <button class="btn btn-full-width" data-key="focus"><a
-                            href="https://github.com/M-HassanJavaid/Sidcup-family-golf-web" target="_blank"
-                            data-key="focus">Checkout code on
-                            Github</a></button>
-                    <button class="btn btn-full-width" data-key="focus"><a
-                            href="https://sidcup-family-golf-by-hassan.netlify.app/" target="_blank"
-                            data-key="focus">View
-                            Live</a></button>
-                </div>
-            </div>
-            <div class="videoContainer">
-                <video src="assets/SidCup web video.mp4" data-key="remove" data-project="project1" muted></video>
-            </div>
+        <h1 id="projects-section-heading">My Projects</h1>
+
+        <div id="project-card-container">
+            <div id="projectloader"></div>
+            
         </div>
-        <div class="projects-child" id="project2">
-            <div class="project-description" id="project-descript-2">
-                <h3>MindScribe – A full stack Blog Website</h3>
-                <p>A full-stack blog web app built with HTML, CSS, JavaScript, and Firebase. Features include user
-                    authentication with email verification, create/edit/delete blogs, drafts, likes, sharing, search,
-                    and cover images. Users can read and publish blogs securely with a modern, responsive design.</p>
-                <div class="btn-container">
-                    <button class="btn btn-full-width" data-key="focus"><a
-                            href="https://github.com/M-HassanJavaid/MindScribe-A-full-Stack-Blog-Website"
-                            data-key="focus" target="_blank">Checkout code on
-                            Github</a></button>
-                    <button class="btn btn-full-width" data-key="focus"><a href="https://mindscribeblog.netlify.app/"
-                            data-key="focus" target="_blank">View
-                            Live</a></button>
-                </div>
-            </div>
-            <div class="videoContainer">
-                <video src="assets/mindScribe.mp4" data-key="remove" data-project="project2" muted></video>
-            </div>
-        </div>
-        <div class="projects-child" id="project3">
-            <div class="project-description" id="project-descript-3">
-                <h3>Hassan's Store - Exommerce Store</h3>
-                <p>This is a fully functional eCommerce frontend built with HTML, CSS, and JavaScript. It fetches real
-                    product data from the FakeStoreAPI, categorizes items (Men, Women, Electronics, Jewelry), and allows
-                    users to add products to a shopping cart. The cart data is saved in localStorage, and users can
-                    update quantities or remove items with real-time total price calculation. Clean UI, smooth
-                    interactivity, and no frameworks — just pure frontend logic.
-                </p>
-                <div class="btn-container">
-                    <button class="btn btn-full-width" data-key="focus"><a
-                            href="https://github.com/M-HassanJavaid/E-commerce-Store" data-key="focus"
-                            target="_blank">Checkout code on
-                            Github</a></button>
-                    <button class="btn btn-full-width" data-key="focus"><a href="https://hassan-ecommerce.netlify.app/"
-                            data-key="focus" target="_blank">View
-                            Live</a></button>
-                </div>
-            </div>
-            <div class="videoContainer">
-                <video src="assets/ecommerse-web.mp4" data-key="remove" data-project="project3" muted></video>
-            </div>
-        </div>
-        <p id="more-on-github"><a href="https://github.com/M-HassanJavaid?tab=repositories" target="_blank"
-                data-key="focus">Checkout
-                more projects on
-                Github <i class="fa-brands fa-square-github"></i></a> </p>
+
     </section>
 
 
@@ -367,7 +305,7 @@
         })();
     </script>
 
-    <script src="script.js"></script>
+    <script src="script.js" type="module"></script>
 
 
 </body>
