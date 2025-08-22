@@ -32,7 +32,7 @@ import { getProjects } from "./firebase.js";
 
         });
 
-        applyGsaptoProjectCards()
+        applyGsap()
 
     } catch (error) {
         alert('Some error occured! projects could not load');
@@ -99,23 +99,12 @@ function ConvertLightToDark() {
 
 // GSAP Animations
 
-// blur effect on skills logo
 
-gsap.from('.skill-card > img', {
-    filter: 'blur(40px)',
-    scrollTrigger: {
-        trigger: '#skills',
-        scroller: 'body',
-        start: 'top 50%',
-        end: 'top 30%',
-        scrub: true
-    }
-});
 
-// animations on projects section
 
-function applyGsaptoProjectCards() {
+function applyGsap() {
 
+    // animations on projects section
     let tl = gsap.timeline({
         scrollTrigger: {
             trigger: "#projects-section-heading",
@@ -123,7 +112,6 @@ function applyGsaptoProjectCards() {
             start: "top 80%",
             end: "top -90%",
             scrub: true,
-            markers: true,
         }
     });
 
@@ -136,52 +124,66 @@ function applyGsaptoProjectCards() {
         stagger: 1
     });
 
+    // blur effect on skills logo
 
+    gsap.from('.skill-card > img', {
+        filter: 'blur(40px)',
+        scrollTrigger: {
+            trigger: '#skills',
+            scroller: 'body',
+            start: 'top 50%',
+            end: 'top 30%',
+            scrub: true
+        }
+    });
+
+    // services animation
+
+    gsap.from('#services-container', {
+        y: 2000,
+        opacity: -10,
+        scrollTrigger: {
+            trigger: '#Services',
+            scroller: 'body',
+            start: 'top 97%',
+            end: 'top 10%',
+            scrub: 2,
+            markers: true
+        }
+    });
+
+    // custom service animation
+
+    gsap.from('#custom-services', {
+        width: '0vw',
+        opacity: 0,
+        scrollTrigger: {
+            trigger: '#custom-services',
+            scroller: 'body',
+            start: 'top 70%',
+            end: 'top 90%',
+            scrub: 4
+        }
+    })
+
+    // contact me form animation
+
+    gsap.from('#Contact-me > form', {
+        y: 700,
+        scale: 0.4,
+        opacity: 0.4,
+        scrollTrigger: {
+            trigger: '#Contact-me',
+            scroller: 'body',
+            start: 'top 70%',
+            end: 'top 62%',
+            scrub: 4
+        }
+    })
 
 }
 
-// services animation
 
-gsap.from('#services-container', {
-    y: 2000,
-    opacity: -10,
-    scrollTrigger: {
-        trigger: '#Services',
-        scroller: 'body',
-        start: 'top 97%',
-        end: 'top -10%',
-        scrub: 2
-    }
-});
-
-// custom service animation
-
-gsap.from('#custom-services', {
-    width: '0vw',
-    opacity: 0,
-    scrollTrigger: {
-        trigger: '#custom-services',
-        scroller: 'body',
-        start: 'top 70%',
-        end: 'top 90%',
-        scrub: 4
-    }
-})
-
-// contact me form animation
-
-gsap.from('#Contact-me > form', {
-    y: 700,
-    scale: 0.4,
-    opacity: 0.4,
-    scrollTrigger: {
-        trigger: '#Contact-me',
-        scroller: 'body',
-        start: 'top 70%',
-        end: 'top 62%',
-        scrub: 4
-    }
-})
 
 // email js setup
 
