@@ -148,7 +148,6 @@ function applyGsap() {
             start: 'top 97%',
             end: 'top 10%',
             scrub: 2,
-            markers: true
         }
     });
 
