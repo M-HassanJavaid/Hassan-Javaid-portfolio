@@ -30,7 +30,9 @@ import { getProjects } from "./firebase.js";
 
             projectsCardContainer.appendChild(newCard);
 
-        })
+        });
+
+        applyGsaptoProjectCards()
 
     } catch (error) {
         alert('Some error occured! projects could not load');
@@ -112,6 +114,31 @@ gsap.from('.skill-card > img', {
 
 // animations on projects section
 
+function applyGsaptoProjectCards() {
+
+    let tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: "#projects-section-heading",
+            scroller: "body",
+            start: "top 80%",
+            end: "top -90%",
+            scrub: true,
+            markers: true,
+        }
+    });
+
+    tl.from(".project-card", {
+        y: 100,            // slide up
+        opacity: 0,        // fade in
+        rotation: -15,     // slight tilt
+        scale: 0.8,        // pop in
+        duration: 1.5,
+        stagger: 1
+    });
+
+
+
+}
 
 // services animation
 
