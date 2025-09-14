@@ -348,7 +348,7 @@ nav {
     width: 200px;
     object-fit: contain;
     padding: 10px;
-    background-color: var(--secondary-color);
+    background-color: white;
     /* background-clip: content-box; */
     border-radius: 10px;
     overflow: hidden;
