@@ -12,7 +12,7 @@
     <!-- Google fonts links -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=BBH+Bartle&family=Comfortaa:wght@300..700&display=swap"
         rel="stylesheet">
     <!-- CSS link -->
     <link rel="stylesheet" href="style.css">
@@ -25,14 +25,14 @@
     </div>
     <nav>
         <div id="logo">
-            <h1>Hassan Javaid</h1>
+            <img src="./assets/signature.png" alt="Hassan Javaid">
         </div>
         <ul id="nav-child">
             <li data-key="focus"><a href="#" data-key="focus">Home</a></li>
             <li data-key="focus"><a href="#skills" data-key="focus">My skills</a></li>
             <li data-key="focus"><a href="#projects" data-key="focus">Projects</a></li>
-            <li data-key="focus"><a href="#service-heading" data-key="focus">What services i offer?</a></li>
-            <li data-key="focus"><a href="#contact-head" data-key="focus">Hire me</a></li>
+            <li data-key="focus"><a href="#about-me-section" data-key="focus">About me</a></li>
+            <li data-key="focus"><a href="#contact-section" data-key="focus">Hire me</a></li>
             <li id="themeChanger">
                 <i class="fa-solid fa-moon" data-key="remove"></i>
                 <i class="fa-solid fa-sun" data-key="remove"></i>
@@ -43,40 +43,70 @@
         </ul>
     </nav>
 
-    <!-- Hero section -->
+    <section id="hero-section">
+        <div id="name-container">
+            <h1>
+                Hassan Javaid
+            </h1>
+            <div id="sm-icons">
+                <!-- <span>Connect with me on:</span> -->
+                <a href="https://www.instagram.com/hassanjavaid_developer/" target="_blank">
+                    <img src="assets/instagram.png" alt="Instagram">
+                </a>
+                <a href="https://www.facebook.com/hassanjavaid.developer" target="_blank">
 
-    <section id="hero">
-        <div id="intro">
-            <h1>Hi! Its me Hassan.</h1>
-            <p>
-                I’m a passionate MERN Stack Developer who builds modern, fast, and fully responsive websites and web
-                apps.
-                I turn ideas or designs from Figma, Canva, or even rough sketches into clean, functional code using
-                HTML, CSS, JavaScript, React, Node.js, Express, and MongoDB.
-            </p>
+                    <img src="assets/facebook.png" alt="Facebook">
+                </a>
+                <a href="https://www.linkedin.com/in/m-hassan-javaid/" target="_blank">
 
-            <p>
-                Whether it’s a personal portfolio, a business website, or a complete web application,
-                I focus on smooth animations, user-friendly design, and strong performance that help brands and
-                freelancers
-                look professional and win more clients.
-            </p>
-
-            <div class="btn-container">
-                <button class="btn" data-key="focus"><a href="#contact-head" data-key="focus">Contact me</a></button>
-                <button class="btn" data-key="focus"><a href="#projects" data-key="focus">View my projects</a></button>
+                    <img src="assets/linkedin.png" alt="Linkedin">
+                </a>
+                <a href="https://github.com/M-HassanJavaid" target="_blank">
+                    <img src="https://play-lh.googleusercontent.com/PCpXdqvUWfCW1mXhH1Y_98yBpgsWxuTSTofy3NGMo9yBTATDyzVkqU580bfSln50bFU"
+                        alt="Linkedin">
+                </a>
             </div>
         </div>
-        <div id="profile-img">
-            <img src="assets/My-image.png" alt="This was my profile image." data-key="remove">
+        <div id="hero-content">
+            <div class="hero-content" id="hero-content-1">
+                <h2>I am a MERN stack website developer.</h2>
+                <a href="#projects" data-key="focus">
+                    <button class="btn" data-key="focus">View My Work</button>
+                </a>
+            </div>
+            <div id="img-container">
+                <div id="img-bg"></div>
+                <img src="./assets/my-img.png" alt="">
+            </div>
+            <div class="hero-content" id="hero-content-2">
+                <p>I help Businesses and freelancers to build strong online presence and bring leads by creating high
+                    quality websites.</p>
+                <a href="#contact-section" data-key="focus">
+                    <button class="btn" data-key="focus">Book a Call</button>
+                </a>
+            </div>
         </div>
-
     </section>
+
+
 
     <!-- About me Section -->
 
+
+    <section id="about-me-section">
+        <h1 id="about-me-heading">About me</h1>
+        <p class="reveal-text">It's me Hassan. I’m a MERN stack developer specializing in building modern, scalable, and
+            high-performance websites. I work
+            with MongoDB, Express.js, React.js, and Node.js to create responsive, user-friendly web applications
+            tailored to business needs. From clean UI design to robust backend development, I focus on delivering
+            reliable solutions that help clients grow their online presence.</p>
+    </section>
+
+
+    <!-- skills section -->
+
     <section id="skills">
-        <h1>Skills that i have</h1>
+        <h1>My Tech Stack</h1>
         <div class="skills-container">
             <div class="skill-card">
                 <img src="assets/HTML.png" alt="HTML Logo" data-key="remove">
@@ -104,7 +134,7 @@
             </div>
             <div class="skill-card">
                 <img src="assets/react-logo.png" alt="React Logo" data-key="remove">
-                <h2>React</h2>
+                <h2>React JS</h2>
             </div>
             <div class="skill-card">
                 <img src="assets/mongodb-logo.png" alt="MongoDB Logo" data-key="remove">
@@ -116,9 +146,22 @@
             </div>
             <div class="skill-card">
                 <img src="assets/nodejs-logo.jpeg" alt="NodeJs Logo" data-key="remove">
-                <h2>NodeJs</h2>
+                <h2>Node JS</h2>
             </div>
-            
+            <div class="skill-card">
+                <img src="assets/nextjs-original.png" alt="Next JS Logo" data-key="remove">
+                <h2>Next JS</h2>
+            </div>
+            <div class="skill-card">
+                <img src="https://git-scm.com/images/logos/logomark-orange@2x.png" alt="Git Logo" data-key="remove">
+                <h2>Git</h2>
+            </div>
+            <div class="skill-card">
+                <img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" alt="Github Logo"
+                    data-key="remove">
+                <h2>Github</h2>
+            </div>
+
         </div>
     </section>
 
@@ -134,177 +177,79 @@
 
     </section>
 
-
-
-
-    <section id="Services">
-        <h1 id="service-heading">What services i offer?</h1>
-
-        <!-- First Service -->
-
-        <div id="services-container">
-            <div class="services-card" id="service-1">
-                <h3>Figma / Canva to HTML Conversion</h3>
-                <div class="service-description">
-                    <p class="service-p-1">Do you have a beautiful design in Figma or Canva and need it turned into a
-                        real website? I can
-                        help!</p>
-                    <p class="service-p-2">I will take your static design and convert it into a responsive,
-                        pixel-perfect website using
-                        clean HTML, CSS, and JavaScript — no backend needed. Whether it's a personal project, landing
-                        page, or a static business site, your design will come to life in the browser exactly as you
-                        envisioned.
-                    </p>
-                    <h5>✅ What you’ll get:</h5>
-                    <ul class="what-you-get">
-                        <li>100% match to your Figma/Canva design</li>
-                        <li>Responsive layout (mobile, tablet, desktop)</li>
-                        <li>Fast, clean, and SEO-friendly code</li>
-                        <li>Cross-browser compatibility</li>
-                        <li>Smooth animations and transitions (if required)</li>
-                        <li>Organized files ready to deploy</li>
-                    </ul>
-                    <p class="service-p-3">
-                        This is perfect for designers, agencies, or business owners who want a fast, reliable frontend
-                        developer to bring their designs to life.
-                    </p>
-                    <button class="btn" data-key="focus"><a href="#contact-head" data-key="focus">Hire me</a></button>
-                </div>
-            </div>
-
-            <!-- Second Service -->
-
-            <div class="services-card" id="service-2">
-                <h3>Portfolio & Personal Website Development</h3>
-                <div class="service-description">
-                    <p class="service-p-1">Want a professional online presence to showcase your work, skills, or
-                        personal brand? I’ll build a clean, modern, and responsive website tailored just for you.</p>
-                    <p class="service-p-2">Whether you're a freelancer, creative, developer, or student — I’ll create a
-                        beautiful personal or portfolio website that looks great on all devices and leaves a lasting
-                        impression.
-                    </p>
-                    <h5>✅ What you’ll get:</h5>
-                    <ul class="what-you-get">
-                        <li>Fully custom portfolio or personal website</li>
-                        <li>Mobile-friendly, responsive layout</li>
-                        <li>Smooth animations and clean user experience</li>
-                        <li>Contact form (by using EmailJS)</li>
-                        <li>Fast, SEO-friendly, and easy-to-navigate design</li>
-                        <li>Organized code and files, ready to go live</li>
-                    </ul>
-                    <p class="service-p-3">This is ideal for anyone looking to build a personal brand, share their
-                        projects, or stand out professionally online — without dealing with complicated platforms or
-                        code.
-                    </p>
-                    <button class="btn" data-key="focus"><a href="#contact-head" data-key="focus">Hire me</a></button>
-                </div>
-            </div>
-
-            <!-- Third Service -->
-
-            <div class="services-card" id="service-3">
-                <h3>Responsive Landing Page Development</h3>
-                <div class="service-description">
-                    <p class="service-p-1">Need a high-converting landing page for your product, service, or campaign?
-                        I’ll build a modern, responsive landing page that looks great and performs well across all
-                        devices.
-                    </p>
-                    <p class="service-p-2">Landing pages are all about making a strong first impression — I’ll create a
-                        clean and focused design that guides your visitors to take action, whether it’s signing up,
-                        contacting you, or making a purchase.
-                    </p>
-                    <h5>✅ What you’ll get:</h5>
-                    <ul class="what-you-get">
-                        <li>Custom landing page built from your design or idea</li>
-                        <li>Fully responsive (mobile, tablet, desktop)</li>
-                        <li>Smooth scrolling and engaging layout</li>
-                        <li>Call-to-action buttons and sections that convert</li>
-                        <li>Fast-loading and SEO-friendly code</li>
-                        <li>Clean, organized files ready for deployment</li>
-                    </ul>
-                    <p class="service-p-3">Perfect for startups, small businesses, campaigns, or personal projects
-                        looking to make a powerful impact with a single-page site.</p>
-                    <button class="btn" data-key="focus"><a href="#contact-head" data-key="focus">Hire me</a></button>
-                </div>
-            </div>
-
-            <!-- Fourth Service -->
-
-            <div class="services-card" id="service-4">
-                <h3>Static Website Development</h3>
-                <div class="service-description">
-                    <p class="service-p-1">Looking for a fast, secure, and lightweight website without the complexity of
-                        backend systems? I’ll build you a fully responsive static website that’s perfect for portfolios,
-                        small businesses, or informational pages.
-                    </p>
-                    <p class="service-p-2">Static websites are simple, quick to load, and easy to maintain — ideal if
-                        you need a professional web presence without ongoing updates or dynamic content.
-                    </p>
-                    <h5>✅ What you’ll get:</h5>
-                    <ul class="what-you-get">
-                        <li>Custom-designed static website (HTML, CSS, JS)</li>
-                        <li>Fully responsive for mobile, tablet, and desktop</li>
-                        <li>Fast loading and SEO-friendly structure</li>
-                        <li>Clean, well-organized, and maintainable code</li>
-                        <li>Cross-browser compatibility</li>
-                        <li>Ready-to-upload files for platforms like Netlify, Vercel, GitHub Pages, Hostinger etc</li>
-                    </ul>
-                    <p class="service-p-3">This is the best solution for individuals or businesses who want a reliable
-                        and performant website without dealing with complex systems or CMS platforms.</p>
-                    <button class="btn" data-key="focus"><a href="#contact-head" data-key="focus">Hire me</a></button>
-                </div>
-            </div>
-        </div>
-        <div id="custom-services">
-            <p>For further details or to discuss a custom project, please feel free to get in touch. I’d be happy to
-                assist you.</p>
-            <button class="btn" data-key="focus"><a href="#contact-head" data-key="focus">Contact me</a></button>
-        </div>
-    </section>
-
     <!-- Contact section -->
 
-    <section id="Contact-me">
-        <h1 id="contact-head">Lets get in touch!</h1>
-        <form>
-            <input type="text" placeholder="Enter your name" data-key="remove" id="name">
-            <input type="email" placeholder="Enter your Email" data-key="remove" id="email">
-            <select data-key="remove" id="objective">
-                <option value="" selected data-key="remove">Why am i contacting?</option>
-                <option value="for Deatils" data-key="remove">Just for further details</option>
-                <option value="Figma or Canva to HTML" data-key="remove">looking for Figma / Canva to HTML conversion
-                    service</option>
-                <option value="Portfolio Website" data-key="remove">looking for Portfolio & Personal Website Development
-                    service</option>
-                <option value="Landing Page" data-key="remove">looking for Responsive Landing Page Development service
-                </option>
-                <option value="Static Website" data-key="remove">looking for Static Website Development service</option>
-                <option value="Custom project" data-key="remove">discussing about Custom project</option>
-            </select>
-            <textarea placeholder="Describe your requirements" data-key="remove" id="message"></textarea>
-            <button class="btn" data-key="focus">Contact with me</button>
-        </form>
-        <p class="email">You can also email me on <a href="mailto:javaidhassan464@gmail.com"
-                data-key="focus">javaidhassan464@gmail.com</a></p>
-
-        <!-- Success Popup -->
-
+    <section id="contact-section">
         <div id="popup">
             <p>Thank you for reaching out. Your message has been received, and I will respond to you as soon as
                 possible.</p>
             <button class="btn" data-key="focus">OK</button>
         </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2 class="form-text">Let's Connect</h2>
+                <p class="form-text">Have a project in mind? Reach out and let's build something amazing together.</p>
 
+
+
+            </div>
+
+            <div class="contact-card">
+                <form id="contact-form">
+                    <div class="input-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" placeholder="John Doe" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" placeholder="john@example.com" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+                    </div>
+                    <button type="submit" data-key="focus" class="submit-btn btn">Send Message</button>
+                </form>
+
+                <p>You can also reachout me on <a href="mailto:javaidhassan464@gmail.com">javaidhassan464@gmail.com</a>
+                </p>
+
+            </div>
+        </div>
     </section>
 
 
     <footer>
         <ul>
             <li>Connect with me on</li>
-            <li data-key="focus"><a href="https://www.linkedin.com/in/m-hassan-javaid/" target="_blank"
-                    data-key="focus">Linkedin <i class="fa-brands fa-linkedin" data-key="focus"></i></a></li>
-            <li data-key="focus"><a href="https://github.com/M-HassanJavaid" data-key="focus" target="_blank">Github <i
-                        class="fa-brands fa-square-github" data-key="focus"></i></a></li>
+
+            <li data-key="focus">
+                <a href="https://www.linkedin.com/in/m-hassan-javaid/" target="_blank" data-key="focus">
+                    <i class="fa-brands fa-linkedin" data-key="focus"></i>
+                    Linkedin
+                </a>
+            </li>
+
+            <li data-key="focus">
+                <a href="https://github.com/M-HassanJavaid" data-key="focus" target="_blank">
+                    <i class="fa-brands fa-square-github" data-key="focus"></i>
+                    Github
+                </a>
+            </li>
+
+            <li data-key="focus">
+                <a href="https://www.facebook.com/hassanjavaid.developer" data-key="focus" target="_blank">
+                    <i class="fa-brands fa-facebook" data-key="focus"></i>
+                    Facebook
+                </a>
+            </li>
+
+            <li data-key="focus">
+                <a href="https://www.instagram.com/hassanjavaid_developer/" data-key="focus" target="_blank">
+                    <i class="fa-brands fa-square-instagram" data-key="focus"></i>
+                    Instagram
+                </a>
+            </li>
         </ul>
         <p>All copyrights &COPY; reserved by Muhammad Hassan Javaid</p>
     </footer>
@@ -317,6 +262,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
     </script>
+    <script src="https://unpkg.com/split-type"></script>
     <script type="text/javascript">
         (function () {
             emailjs.init({

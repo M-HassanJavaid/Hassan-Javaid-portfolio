@@ -1,5 +1,7 @@
 import { getProjects } from "./firebase.js";
 
+const signatureElem = document.querySelector('#logo > img');
+
 // render projects
 
 (async function () {
@@ -35,7 +37,7 @@ import { getProjects } from "./firebase.js";
         applyGsap()
 
     } catch (error) {
-        alert('Some error occured! projects could not load');
+        alert(error.message);
     } finally {
         document.querySelector('#projectloader').style.display = 'none';
     }
@@ -75,6 +77,7 @@ lightToDark.addEventListener('click', ConvertLightToDark);
 function ConvertDarkToLight() {
     darkToLight.style.display = 'none';
     lightToDark.style.display = 'block';
+    signatureElem.src = './assets/light-sign.png';
     document.documentElement.style.setProperty('--primary-color', 'white');
     document.documentElement.style.setProperty('--secondary-color', 'black');
     document.documentElement.style.setProperty('--primary-color-2', '#dde3e9');
@@ -86,6 +89,7 @@ function ConvertDarkToLight() {
 function ConvertLightToDark() {
     lightToDark.style.display = 'none';
     darkToLight.style.display = 'block';
+    signatureElem.src = './assets/signature.png';
     document.documentElement.style.setProperty('--primary-color', '#011627');
     document.documentElement.style.setProperty('--secondary-color', 'white');
     document.documentElement.style.setProperty('--primary-color-2', 'black');
@@ -105,7 +109,7 @@ function ConvertLightToDark() {
 function applyGsap() {
 
     // animations on projects section
-    let tl = gsap.timeline({
+    let projectTimeline = gsap.timeline({
         scrollTrigger: {
             trigger: "#projects-section-heading",
             scroller: "body",
@@ -115,7 +119,7 @@ function applyGsap() {
         }
     });
 
-    tl.from(".project-card", {
+    projectTimeline.from(".project-card", {
         y: 100,            // slide up
         opacity: 0,        // fade in
         rotation: -15,     // slight tilt
@@ -127,43 +131,17 @@ function applyGsap() {
     // blur effect on skills logo
 
     gsap.from('.skill-card > img', {
-        filter: 'blur(40px)',
+        // filter: 'blur(40px)',
+        opacity: 0,
+        y: 200,
         scrollTrigger: {
             trigger: '#skills',
             scroller: 'body',
             start: 'top 50%',
             end: 'top 30%',
-            scrub: true
+            scrub: 3
         }
     });
-
-    // services animation
-
-    gsap.from('#services-container', {
-        y: 2000,
-        opacity: -10,
-        scrollTrigger: {
-            trigger: '#Services',
-            scroller: 'body',
-            start: 'top 97%',
-            end: 'top 10%',
-            scrub: 2,
-        }
-    });
-
-    // custom service animation
-
-    gsap.from('#custom-services', {
-        width: '0vw',
-        opacity: 0,
-        scrollTrigger: {
-            trigger: '#custom-services',
-            scroller: 'body',
-            start: 'top 70%',
-            end: 'top 90%',
-            scrub: 4
-        }
-    })
 
     // contact me form animation
 
@@ -178,7 +156,86 @@ function applyGsap() {
             end: 'top 62%',
             scrub: 4
         }
+    });
+
+    //contact form animation
+
+    const tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: "#contact-section",
+            start: "top 80%", // Animation starts when section is 80% from the top
+            toggleActions: "play none none reverse"
+        }
+    });
+
+    // Animate the text and info
+    tl.from(".form-text", {
+        y: 50,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.2,
+        ease: "power4.out"
     })
+
+        // Animate the Glass Card
+        .from(".contact-card", {
+            scale: 0.9,
+            opacity: 0,
+            duration: 1,
+            ease: "expo.out"
+        }, "-=0.5")
+
+        // Animate the Input fields one by one
+        .from(".input-group", {
+            y: 20,
+            opacity: 0,
+            duration: 0.6,
+            stagger: 0.15,
+            ease: "power2.out"
+        }, "-=0.5")
+
+        // Final button pop
+        .from(".submit-btn", {
+            y: 10,
+            opacity: 0,
+            duration: 0.5
+        }, "-=0.2");
+
+    // about us animation
+
+    const text = new SplitType('.reveal-text', { types: 'words' });
+
+    // Wrap each word in a container with overflow:hidden
+    // This is what creates the "sliding out of nowhere" effect
+    text.words.forEach(word => {
+        const wrapper = document.createElement('span');
+        wrapper.classList.add('word-inner');
+        wrapper.innerHTML = word.innerHTML;
+        word.innerHTML = '';
+        word.appendChild(wrapper);
+    });
+
+    // 2. Register ScrollTrigger
+    // gsap.registerPlugin(ScrollTrigger);
+
+    // 3. Create the animation
+    gsap.to('.word-inner', {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        stagger: 0.1,
+        ease: "power4.out",
+        scrollTrigger: {
+            trigger: '.reveal-text',
+            start: 'top 80%', // Starts when the top of the text hits 80% of the viewport
+            end: 'top 20%',
+            toggleActions: 'play none none reverse', // Plays on scroll down, reverses on scroll up
+            markers: true
+        }
+    });
+
+    ScrollTrigger.refresh();
+
 
 }
 
@@ -189,7 +246,7 @@ function applyGsap() {
 let emailConfirmPopup = document.querySelector('#popup');
 let PopupBtn = document.querySelector('#popup button');
 let popupMessage = document.querySelector('#popup p');
-let formSubmitBtn = document.querySelector('form .btn');
+let formSubmitBtn = document.querySelector('.submit-btn');
 let loaderContainer = document.querySelector('#loader-container');
 let loader = document.querySelector('#loader');
 
@@ -215,13 +272,11 @@ const templateID = 'template_hp8mogl';
 
 let nameInput = document.querySelector('#name');
 let emailInput = document.querySelector('#email');
-let objectiveInput = document.querySelector('#objective');
 let messageInput = document.querySelector('#message');
 
 function cleanInput() {
     nameInput.value = '';
     emailInput.value = '';
-    objectiveInput.value = '';
     messageInput.value = '';
 }
 
@@ -231,7 +286,6 @@ function collectdata() {
     let data = {
         name: nameInput.value,
         email: emailInput.value,
-        objective: objectiveInput.value,
         message: messageInput.value
     }
 
@@ -248,6 +302,7 @@ function collectdata() {
 
 function sendMail() {
     let data = collectdata();
+    console.log(data)
     if (data === null) { return }
     dispalyLoaderForForm();
     emailjs.send(serviceID, templateID, data)
@@ -257,12 +312,13 @@ function sendMail() {
             emailConfirmPopup.style.display = 'flex';
             cleanInput()
         })
-        .catch((reject) => {
+        .catch((err) => {
             hideLoaderForForm();
             popupMessage.innerHTML = `We're sorry, but your message couldn't be sent right now. Please try again in a few moments, 
-        or feel free to reach out directly at <a href='mailto:javaidhassan464@gmail.com' data-key='focus'>javaidhassan464@gmail.com</a>.
-        Thanks for your patience!`;
+            or feel free to reach out directly at <a href='mailto:javaidhassan464@gmail.com' data-key='focus'>javaidhassan464@gmail.com</a>.
+            Thanks for your patience!`;
             emailConfirmPopup.style.display = 'flex';
+            alert(err.message)
         });
 
 }
@@ -277,6 +333,20 @@ formSubmitBtn.addEventListener('click', (e) => {
 
 window.addEventListener('load', () => {
     loaderContainer.style.display = 'none';
+
+    gsap.from('#name-container', {
+        height: 0,
+        duration: 2,
+    });
+
+    gsap.from('#hero-content-1', {
+        x: '-100%',
+        duration: 3,
+    });
+    gsap.from('#hero-content-2', {
+        x: '100%',
+        duration: 3,
+    })
 });
 
 // giving controls to videos on mobile devices
@@ -306,5 +376,4 @@ mobileMenu.addEventListener('click', () => {
         navbar.style.height = '80px';
         isMenuOpen = false;
     }
-})
-
+});
