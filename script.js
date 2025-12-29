@@ -230,7 +230,7 @@ function applyGsap() {
             start: 'top 80%', // Starts when the top of the text hits 80% of the viewport
             end: 'top 20%',
             toggleActions: 'play none none reverse', // Plays on scroll down, reverses on scroll up
-            markers: true
+            // markers: true
         }
     });
 
