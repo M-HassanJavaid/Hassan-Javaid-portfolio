@@ -126,7 +126,7 @@ function applyGsap() {
                 start: "top 70%",
                 // end: "top -90%",
                 // scrub: true,
-                markers: true,
+                // markers: true,
                 toggleActions: "play none none reverse"
 
             }
