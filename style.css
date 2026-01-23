@@ -536,6 +536,10 @@ nav {
 
 }
 
+.project-content > p{
+    line-height: 1.5rem;
+}
+
 .project-btn-container {
     display: flex;
     gap: 20px;
@@ -550,166 +554,6 @@ nav {
     flex: 1;
 }
 
-/* My services */
-
-#Services {
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
-    min-height: 1290px;
-}
-
-#services-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    perspective: 1200px;
-}
-
-.services-card {
-    width: 40%;
-    min-width: 500px;
-    padding: 15px;
-    margin: 25px;
-    background-color: var(--primary-color-2);
-    color: var(--secondary-color);
-    border-radius: 15px;
-    border: 7px solid rgb(218 244 177);
-    position: relative;
-    cursor: grab;
-
-    /* Smooth interaction */
-    transition: transform 0.5s ease, box-shadow 0.5s ease;
-    overflow: hidden;
-    /* for shine effect */
-}
-
-/* Hover animation */
-.services-card:hover {
-    transform: rotate3d(1, 1, 0, 4deg);
-    box-shadow: 0 15px 35px rgba(102, 150, 29, 0.4),
-        0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-/* Shine sweep effect */
-.services-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -75%;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(120deg,
-            transparent,
-            rgba(255, 255, 255, 0.4),
-            transparent);
-    transform: skewX(-25deg);
-}
-
-/* Shine animation only on hover */
-.services-card:hover::before {
-    animation: shine 1s forwards;
-}
-
-@keyframes shine {
-    0% {
-        left: -75%;
-    }
-
-    100% {
-        left: 125%;
-    }
-}
-
-
-.services-card>h3 {
-    font-size: var(--secondary-heading-fontsize);
-}
-
-.service-description>* {
-    margin-block: 15px;
-}
-
-.service-description>h5 {
-    font-size: 1.5rem;
-}
-
-#Services>h1 {
-    font-size: var(--heading-fontsize);
-    text-align: center;
-    padding: 15px;
-    color: var(--secondary-color);
-}
-
-.what-you-get {
-    padding-left: 18px;
-}
-
-#custom-services {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: var(--standard-fontsize);
-    background-color: var(--primary-color-2);
-    color: var(--secondary-color);
-    padding: 15px;
-    border-block: 2px solid var(--secondary-color);
-    overflow: hidden;
-    min-height: 100px;
-    width: 100%;
-}
-
-/* Contact me */
-
-/* #Contact-me {
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
-    min-height: 670px;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-}
-
-#Contact-me>h1 {
-    font-size: var(--heading-fontsize);
-    text-align: center;
-    padding: 20px;
-}
-
-#Contact-me>form {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-}
-
-form>* {
-    font-size: var(--standard-fontsize);
-    padding: 7px 15px;
-    width: 80%;
-    background-color: var(--primary-color-2);
-    color: var(--secondary-color);
-    border: 2px solid var(--secondary-color);
-}
-
-textarea {
-    flex: 1;
-    background-color: var(--primary-color-2);
-    color: var(--secondary-color);
-    border: 2px solid var(--secondary-color);
-
-}
-
-.email {
-    font-size: var(--standard-fontsize);
-    text-align: center;
-    padding: 20px;
-}
-
-.email>a {
-    color: var(--secondary-color);
-} */
 
 #contact-section {
     min-height: 100vh;
@@ -915,24 +759,7 @@ footer>ul>li {
     width: 50px;
     border: 2px solid var(--secondary-color);
 }
-
-@media (max-width : 1100px) {
-
-    #services-container {
-        flex-direction: column;
-        width: 100%;
-        align-items: center;
-    }
-
-    .services-card {
-        width: 100%;
-        min-width: calc(100% - 30px);
-        position: relative;
-        left: -10px;
-    }
-
-}
-
+  
 @media (max-width: 800px) {
 
     nav {
@@ -1047,6 +874,9 @@ footer>ul>li {
         background-color: var(--primary-color-2);
     }
 
+    .project-btn{
+        font-size: 0.8rem;
+    }
 
 
 }
@@ -1055,7 +885,15 @@ footer>ul>li {
 
     .project-title {
         height: fit-content;
-        font-size: 1.7rem;
+        font-size: 1.5rem;
+    }
+
+    .project-content > p{
+        font-size: 0.9rem;
+    }
+
+    .project-btn-container{
+        gap: 10px;
     }
 }
 

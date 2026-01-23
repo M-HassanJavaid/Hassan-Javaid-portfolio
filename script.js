@@ -110,23 +110,29 @@ function applyGsap() {
 
     // animations on projects section
     let projectTimeline = gsap.timeline({
-        scrollTrigger: {
-            trigger: "#projects-section-heading",
-            scroller: "body",
-            start: "top 80%",
-            end: "top -90%",
-            scrub: true,
-        }
+
     });
 
-    projectTimeline.from(".project-card", {
-        y: 100,            // slide up
-        opacity: 0,        // fade in
-        rotation: -15,     // slight tilt
-        scale: 0.8,        // pop in
-        duration: 1.5,
-        stagger: 1
-    });
+    document.querySelectorAll('.project-card').forEach((elem) => {
+        gsap.from(elem, {
+            y: 100,            // slide up
+            opacity: 0,        // fade in
+            rotation: -15,     // slight tilt
+            scale: 0.8,        // pop in
+            duration: 1.5,
+            scrollTrigger: {
+                trigger: elem,
+                scroller: "body",
+                start: "top 70%",
+                // end: "top -90%",
+                // scrub: true,
+                markers: true,
+                toggleActions: "play none none reverse"
+
+            }
+        });
+    })
+
 
     // blur effect on skills logo
 
